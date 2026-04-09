@@ -247,7 +247,7 @@
 
     <script>
         const scriptURL = "https://script.google.com/macros/s/AKfycbwLyENRU95dL4ImPqZH48JWSkCfvoCxpb7l0hi4rkWKR2AlXZz4JPCpJhC4vmwD25FH/exec";
-        const form = document.forms["contact-form"];
+        const form = document.getElementById("contactForm");
 
         form.addEventListener("submit", e => {
             e.preventDefault();
@@ -256,8 +256,7 @@
                     method: "POST",
                     body: new FormData(form)
                 })
-                .then(response => response.json())
-                .then(data => {
+                .then(() => {
                     alert("Pesan berhasil dikirim!");
                     form.reset();
                 })
