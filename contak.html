@@ -261,17 +261,19 @@
 
             fetch(scriptURL, {
                     method: "POST",
-                    mode: "no-cors", // 🔥 tambahin ini
                     headers: {
                         "Content-Type": "application/json"
                     },
                     body: JSON.stringify(data)
                 })
-                .then(() => {
+                .then(res => res.text())
+                .then(res => {
+                    console.log(res);
                     alert("Pesan berhasil dikirim!");
                     form.reset();
                 })
                 .catch(err => {
+                    console.error(err);
                     alert("Error: " + err);
                 });
         });
