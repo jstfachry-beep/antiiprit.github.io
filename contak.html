@@ -247,34 +247,22 @@
 
     <script>
         const scriptURL = "https://script.google.com/macros/s/AKfycbwLyENRU95dL4ImPqZH48JWSkCfvoCxpb7l0hi4rkWKR2AlXZz4JPCpJhC4vmwD25FH/exec";
-        const form = document.getElementById("contactForm");
+        const form = document.forms["contact-form"];
 
         form.addEventListener("submit", e => {
             e.preventDefault();
 
-            const data = {
-                nama: form.nama.value,
-                telepon: form.telepon.value,
-                email: form.email.value,
-                pesan: form.pesan.value
-            };
-
             fetch(scriptURL, {
                     method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify(data)
+                    body: new FormData(form)
                 })
-                .then(res => res.text())
-                .then(res => {
-                    console.log(res);
+                .then(response => response.json())
+                .then(data => {
                     alert("Pesan berhasil dikirim!");
                     form.reset();
                 })
-                .catch(err => {
-                    console.error(err);
-                    alert("Error: " + err);
+                .catch(error => {
+                    alert("Error: " + error.message);
                 });
         });
     </script>
