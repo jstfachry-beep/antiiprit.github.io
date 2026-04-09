@@ -246,7 +246,7 @@
 
 
     <script>
-        const scriptURL = "https://script.google.com/macros/library/d/13lvFpbIwFJO_b7QZuPURJZ5q8GjHsGAOPuthojKvtBa1llVhmMM-cm8i/6";
+        const scriptURL = "https://script.google.com/macros/s/AKfycbwLyENRU95dL4ImPqZH48JWSkCfvoCxpb7l0hi4rkWKR2AlXZz4JPCpJhC4vmwD25FH/exec";
         const form = document.getElementById("contactForm");
 
         form.addEventListener("submit", e => {
@@ -258,13 +258,22 @@
                 email: form.email.value,
                 pesan: form.pesan.value
             };
+
             fetch(scriptURL, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(data)
-            })
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(res => res.json())
+                .then(res => {
+                    alert("Pesan berhasil dikirim!");
+                    form.reset();
+                })
+                .catch(err => {
+                    alert("Error: " + err);
+                });
         });
     </script>
 
