@@ -261,14 +261,12 @@
             };
 
             fetch(scriptURL, {
-                    method: "POST",
-                    body: JSON.stringify(data)
-                })
-                .then(res => {
-                    alert("Pesan berhasil dikirim!");
-                    form.reset();
-                })
-                .catch(err => alert("Error: " + err));
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            })
         });
     </script>
 
