@@ -256,15 +256,15 @@
                     method: "POST",
                     body: new FormData(form)
                 })
-                .then(response => response.text()) // ambil respons dari Apps Script
+                .then(response => response.text())
                 .then(text => {
-                    console.log(text); // harus muncul "Success" kalau berhasil
+                    console.log("Response dari Apps Script:", text);
                     alert("Pesan berhasil dikirim!");
                     form.reset();
                 })
-                .catch(error => {
-                    console.error(error);
-                    alert("Error: " + error.message);
+                .catch(err => {
+                    console.error("Error:", err);
+                    alert("Gagal mengirim pesan. Cek console untuk detail.");
                 });
         });
     </script>
