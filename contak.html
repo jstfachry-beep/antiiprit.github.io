@@ -253,16 +253,9 @@
             e.preventDefault();
 
             fetch(scriptURL, {
-                    method: "POST",
-                    body: new FormData(form)
-                })
-                .then(() => {
-                    alert("Pesan berhasil dikirim!");
-                    form.reset();
-                })
-                .catch(error => {
-                    alert("Error: " + error.message);
-                });
+                method: "POST",
+                body: new FormData(form)
+            })
         });
     </script>
 
