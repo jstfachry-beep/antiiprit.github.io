@@ -187,22 +187,22 @@
                 <div class="col-md-6">
                     <h3 class="mb-4">Kirim Pesan</h3>
 
-                    <form style="border:2px solid black; padding:20px; border-radius:10px;" method="post" action="kirim.html">
+                    <form id="contactForm" style="border:2px solid black; padding:20px; border-radius:10px;">
 
                         <div class="mb-3">
-                            <input type="text" class="form-control" placeholder="Masukkan Nama">
+                            <input type="text" name="nama" class="form-control" placeholder="Masukkan Nama" required>
                         </div>
 
                         <div class="mb-3">
-                            <input type="text" class="form-control" placeholder="Masukkan No Telepon">
+                            <input type="text" name="telepon" class="form-control" placeholder="Masukkan No Telepon" required>
                         </div>
 
                         <div class="mb-3">
-                            <input type="email" class="form-control" placeholder="Masukkan Email">
+                            <input type="email" name="email" class="form-control" placeholder="Masukkan Email" required>
                         </div>
 
                         <div class="mb-3">
-                            <textarea class="form-control" rows="4" placeholder="Pesan yang ingin disampaikan"></textarea>
+                            <textarea name="pesan" class="form-control" rows="4" placeholder="Pesan"></textarea>
                         </div>
 
                         <button type="submit" class="btn btn-primary">Kirim</button>
@@ -244,6 +244,33 @@
 
     </footer>
 
+
+    <script>
+        const scriptURL = "https://script.google.com/macros/s/AKfycbw3nHNjRZonTyZg_Vctg2ClHJp9B8P8P9-khINGEXVxyAzsNyiIBFscJRSOh_1LAmotXg/exec";
+
+        const form = document.getElementById("contactForm");
+
+        form.addEventListener("submit", e => {
+            e.preventDefault();
+
+            const data = {
+                nama: form.nama.value,
+                telepon: form.telepon.value,
+                email: form.email.value,
+                pesan: form.pesan.value
+            };
+
+            fetch(scriptURL, {
+                    method: "POST",
+                    body: JSON.stringify(data)
+                })
+                .then(res => {
+                    alert("Pesan berhasil dikirim!");
+                    form.reset();
+                })
+                .catch(err => alert("Error: " + err));
+        });
+    </script>
 
 </body>
 
