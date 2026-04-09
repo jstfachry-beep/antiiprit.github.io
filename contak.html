@@ -261,12 +261,19 @@
             };
 
             fetch(scriptURL, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(data)
-            })
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(res => {
+                    alert("Berhasil dikirim!");
+                    form.reset();
+                })
+                .catch(err => {
+                    alert("Error: " + err);
+                });
         });
     </script>
 
