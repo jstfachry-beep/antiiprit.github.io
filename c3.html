@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Page</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        .about-hero {
+            background: url('pramuka.jpg') no-repeat center/cover;
+            height: 60vh;
+            position: relative;
+            color: white;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo img {
+            width: 40px;
+            height: 40px;
+        }
+        
+        .logo span {
+            font-size: 22px;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 17px;
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #ffd700;
+            transition: 0.3s;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .nav-links a:hover {
+            color: #ffd700;
+        }
+        
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        
+        .content h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        
+        .content p {
+            font-size: 16px;
+        }
+        
+        .btn-primary {
+            background-color: transparent;
+            /* nyatu sama background */
+            color: red;
+            border: 2px solid red;
+            border-radius: 25px;
+            transition: 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background-color: red;
+            color: white;
+            border: 2px solid red;
+        }
+        
+        section p {
+            color: #6c757d;
+            /* abu-abu lembut */
+        }
+        
+        .card {
+            border: none;
+            border-radius: 15px;
+            background: #e3f2fd;
+            /* satu warna biru muda */
+            padding: 30px;
+            transition: 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-title {
+            color: #0d6efd;
+        }
+        
+        .card-body {
+            text-align: left;
+        }
+        
+        .card {
+            border: none;
+            border-radius: 15px;
+            background: #ffffff;
+            transition: 0.3s;
+        }
+    </style>
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <body>
+
+        <section class="about-hero">
+            <div class="navbar">
+
+                <div class="logo">
+                    <img src="logRPL.png" alt="logo">
+                    <span>Kelompok 5</span>
+                </div>
+
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="tentang.html">About</a>
+                    <a href="c3.html">Course</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="contak.html">Contact</a>
+                </div>
+
+            </div>
+
+            <div class="content">
+                <h1>Course</h1>
+            </div>
+        </section>
+
+        <br>
+        <br>
+
+        <!-- Keunggulan -->
+        <section class="py-5 text-center">
+            <div class="container">
+                <h3 class="mb-3">Keunggulan</h3>
+                <p class="mb-5">SMK BHAKTI INSANI MEMPUNYAI 3 KEUNGGULAN YAITU</p>
+
+                <div class="row mt-4">
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body">
+                                <h3 class="card-title">Fasilitas Lengkap</h3>
+                                <p class="card-text">Laboratorium modern, ruang praktik lengkap, dan lingkungan belajar nyaman.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body">
+                                <h3 class="card-title">Guru Profesional</h3>
+                                <p class="card-text">Tenaga pengajar berpengalaman yang siap membimbing siswa hingga sukses.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body">
+                                <h3 class="card-title">Siap Kerja</h3>
+                                <p class="card-text">Lulusan dibekali skill industri dan siap masuk dunia kerja.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <br><br>
+
+
+        <style>
+            .img-card {
+                position: relative;
+                overflow: hidden;
+                border-radius: 15px;
+            }
+            
+            .img-card img {
+                width: 100%;
+                height: 350px;
+                object-fit: cover;
+                display: block;
+                transition: 0.3s;
+            }
+            
+            .overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.6);
+                color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 20px;
+                opacity: 0;
+                transition: 0.3s;
+            }
+            
+            .img-card:hover .overlay {
+                opacity: 1;
+            }
+            
+            .img-card:hover img {
+                transform: scale(1.1);
+            }
+        </style>
+
+
+        <!-- Fasilitas -->
+        <section class="py-5 text-center" style="background:#ffffff;">
+            <div class="container">
+                <h1 class="mb-3">Fasilitas</h1>
+                <p class="mb-5">Berbagai fasilitas modern kami sediakan untuk menunjang proses belajar yang nyaman dan berkualitas bagi siswa.</p>
+
+                <div class="row">
+                    <!-- Card 1 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 shadow-sm">
+                            <img src="https://picsum.photos/400/300?lab" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <h6>Laboratorium Komputer</h6>
+                                <p>Lab lengkap dengan perangkat terbaru untuk praktik langsung siswa di bidang teknologi.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 shadow-sm">
+                            <img src="https://picsum.photos/400/300?class" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <h6>Ruang Kelas Nyaman</h6>
+                                <p>Ruang belajar bersih dan nyaman yang mendukung konsentrasi siswa dalam belajar.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 shadow-sm">
+                            <img src="https://picsum.photos/400/300?library" class="card-img-top" alt="">
+                            <div class="card-body">
+                                <h6>Perpustakaan</h6>
+                                <p>Tersedia berbagai buku dan sumber belajar untuk menambah wawasan siswa.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer style="background:#ffffff; padding:40px 20px; text-align:center;">
+            <div class="container">
+                <h3 class="mb-3">About Us</h3>
+                <p style="color:#6c757d; max-width:600px; margin:0 auto 20px;">
+                    SMK Bhakti Insani adalah sekolah yang berkomitmen untuk mencetak generasi unggul, siap kerja, dan berdaya saing tinggi di dunia industri.
+                </p>
+
+                <div class="mb-3 d-flex justify-content-center gap-4">
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-twitter"></i></a>
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                    <a href="#"><i class="bi bi-whatsapp"></i></a>
+                </div>
+
+                <p style="color:#6c757d; font-size:14px;">Made in Pace</p>
+            </div>
+            <style>
+                footer i {
+                    font-size: 22px;
+                    color: #0d6efd;
+                    transition: 0.3s;
+                }
+                
+                footer i:hover {
+                    color: #000;
+                }
+            </style>
+
+        </footer>
+
+
+    </body>
+
+</html>
