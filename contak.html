@@ -256,11 +256,14 @@
                     method: "POST",
                     body: new FormData(form)
                 })
-                .then(() => {
+                .then(response => response.text()) // ambil respons dari Apps Script
+                .then(text => {
+                    console.log(text); // harus muncul "Success" kalau berhasil
                     alert("Pesan berhasil dikirim!");
                     form.reset();
                 })
                 .catch(error => {
+                    console.error(error);
                     alert("Error: " + error.message);
                 });
         });
