@@ -505,6 +505,67 @@
                 text-align: left;
             }
         }
+        
+        .review-card {
+            background: #ffc0cb;
+            border-radius: 15px;
+            padding: 20px;
+            transition: 0.3s;
+        }
+        /* Hover biar hidup (desktop) */
+        
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .profile {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        
+        .stars {
+            color: #ffb400;
+            font-size: 18px;
+            letter-spacing: 2px;
+        }
+        /* TABLET */
+        
+        @media (max-width: 992px) {
+            .review-card {
+                padding: 18px;
+            }
+            .review-card p {
+                font-size: 15px;
+            }
+        }
+        /* HP */
+        
+        @media (max-width: 768px) {
+            .review-card {
+                padding: 15px;
+                text-align: left;
+            }
+            .review-card .d-flex {
+                flex-direction: column;
+                /* avatar jadi atas */
+                align-items: center;
+                text-align: center;
+            }
+            .profile {
+                width: 60px;
+                height: 60px;
+                margin-bottom: 10px;
+            }
+            .review-card p {
+                font-size: 14px;
+                margin-bottom: 10px;
+            }
+            .stars {
+                font-size: 16px;
+            }
+        }
     </style>
 
 
